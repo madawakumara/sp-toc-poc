@@ -1,0 +1,33 @@
+<div class="container">
+    <ul class="file-tree file-list">
+        <li class="folder-root" [ngClass]="{'closed' : !book.isExpand}" (click)="toggle(books, i); $event.stopPropagation();" *ngFor="let book of books; let i = index">
+            <span>{{i+1}}</span>{{ book.title }}
+            <ul>
+                <li *ngFor="let page of book.pages | orderBy: 'page.title'; let pi = index">
+                    <span></span>
+                    <label>{{i+1}}.{{pi}}</label><a href="{{page.url}} " target="_blank ">{{page.title}}</a>
+                </li>
+            </ul>
+            <ul>
+                <li class="folder-root" [ngClass]="{'closed' : !chap.isExpand}" (click)="toggle(book.chapters, ii); $event.stopPropagation();" *ngFor="let chap of book.chapters; let ii = index">
+                    <span>{{i+1}}.{{ii+1}}</span>{{ chap.title }}
+                    <ul>
+                        <li *ngFor="let page of chap.pages; let pii = index">
+                            <span></span><label>{{i+1}}.{{ii+1}}.{{pii}}</label><a href="{{page.url}} " target="_blank ">{{page.title}}</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="folder-root" [ngClass]="{'closed' : !sec.isExpand}" (click)="toggle(chap.sections, iii); $event.stopPropagation();" *ngFor="let sec of chap.sections; let iii = index">
+                            <span>{{i+1}}.{{ii+1}}.{{iii+1}}</span>{{ sec.title }}
+                            <ul>
+                                <li *ngFor="let page of sec.pages; let piii = index">
+                                    <span></span><label>{{i+1}}.{{ii+1}}.{{iii+1}}.{{piii}}</label><a href="{{page.url}} " target="_blank ">{{page.title}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

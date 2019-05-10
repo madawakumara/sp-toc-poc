@@ -1,0 +1,133 @@
+.container {
+    padding: 5px 15px;
+    background-color: #f4f4f4;
+}
+
+.file-list,
+.file-list ul {
+    list-style-type: none;
+    font-size: 1em;
+    line-height: 1.8em;
+    /* margin-left: 20px; */
+    padding-left: 0px;
+    /* border-left: 1px dotted #aaa; */
+    font-family: monospace;
+}
+
+.file-list li {
+    position: relative;
+    /* padding-left: 25px; */
+}
+
+.file-list li span {
+    margin-right: 10px;
+    width: 45px;
+    display: inline-block
+}
+
+
+/* .file-list li a {
+    text-decoration: none;
+    color: #444;
+} */
+
+
+/* .file-list li a:before {
+    display: block;
+    content: " ";
+    width: 10px;
+    height: 1px;
+    position: absolute;
+    border-bottom: 1px dotted #aaa;
+    top: .6em;
+    left: -14px;
+} */
+
+
+/* .file-list li:before {
+    list-style-type: none;
+    font-family: FontAwesome;
+    display: block;
+    content: '\f0f6';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    font-size: 1.3em;
+    color: #555;
+} */
+
+.file-list .folder-root {
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.file-list .folder-root .folder-root {
+    font-size: 16px;
+    margin-top: 0px;
+}
+
+.file-list .folder-root .folder-root .folder-root {
+    font-size: 14px;
+}
+
+.file-list .folder-root .folder-root .folder-root .folder-root {
+    font-size: 12px;
+}
+
+.file-list .folder-root a {
+    text-decoration: underline;
+    font-size: 14px;
+    color: blue;
+    font-weight: normal;
+}
+
+.file-list .folder-root label {
+    font-size: 12px;
+    color: blue;
+    font-weight: normal;
+    padding-right: 5px;
+}
+
+
+/* .file-list .folder-root .folder-root a{
+  font-size: 14px;
+}
+
+.file-list .folder-root .folder-root .folder-root a{
+  font-size: 12px;
+}
+
+.file-list .folder-root .folder-root .folder-root .folder-root a{
+  font-size: 10px;
+} */
+
+
+/* .file-list .folder-root:before {
+    color: #FFD04E;
+    content: "\f07b";
+} */
+
+
+/* .file-list .folder-root.open:before {
+    content: "\f07c";
+} */
+
+li.folder-root ul {
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+}
+
+li.folder-root.closed>ul {
+    opacity: 0;
+    max-height: 0px;
+}
+
+li.folder-root.open>ul {
+    opacity: 1;
+    display: block;
+    max-height: 1000px;
+}
